@@ -6,23 +6,28 @@ print "We are now going to count how many of each letter we have."
 
 our_file = open(inputfile).read()
 
-list_of_characters = []
+# list_of_characters = []
+# for char in our_file:
+#     char = str(char.lower())
+#     list_of_characters.append(char)
+#     #list_of_characters.sort()
+# #print list_of_characters
+
+list_of_characters = [0]*26
+
 for char in our_file:
-    char = str(char.lower())
-    list_of_characters.append(char)
-    #list_of_characters.sort()
-#print list_of_characters
+    char = char.lower()
+    if ord(char) > 96 and ord(char) < 123:
+        list_of_characters[ord(char)-97] += 1
 
-count = 0
-char_var = 97
+for i in list_of_characters:
+    print i
 
-while char_var < 123:
-    for i in list_of_characters:
-        if ord(i) == char_var:
-            count += 1
-    print count
-    count = 0
-    char_var += 1
+#     if ord(i) == char_var:
+#         count += 1
+# print count
+# count = 0
+# char_var += 1
     
 
 # for i in list_of_characters:
